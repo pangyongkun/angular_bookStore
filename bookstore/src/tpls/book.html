@@ -1,0 +1,55 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title text-center">图书列表</div>
+        <div class="panel-title text-right"><button ng-click="getBooks()" class="btn btn-primary">查看</button></div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered text-left">
+            <thead>
+            <tr>
+                <td>图书编号</td>
+                <td>书名</td>
+                <td>作者</td>
+                <td>价格</td>
+            </tr>
+            </thead>
+            <tbody ng-repeat="book in books">
+            <tr>
+                <td>{{book.id}}</td>
+                <td><input type="text" name="_book_{{book.id}}" ng-model="book.name" class="inactive" readonly></td>
+                <td><input type="text" name="_book_{{book.id}}" ng-model="book.author" class="inactive" readonly></td>
+                <td><input type="text" name="_book_{{book.id}}" ng-model="book.price" class="inactive" readonly></td>
+                <td>
+                    <button edit ng-model="book" class="btn btn-primary" ng-show="showEdit">编辑</button>
+                    <button update ng-model="book" class="btn btn-primary"  ng-show="!showEdit">保存</button>
+                    <button delete ng-model="book" class="btn btn-primary"  >删除</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <form>
+        <div class="form-group">
+            <label for="id">图书编号</label>
+            <input id="id" class="form-control" placeholder="图书编号" ng-model="id" type="number" required aria-required="true">
+        </div>
+        <div class="form-group">
+            <label for="name">书名</label>
+            <input id="name" class="form-control" placeholder="书名" ng-model="bookname" type="text" required >
+        </div>
+        <div class="form-group">
+            <label for="author">作者</label>
+            <input id="author" class="form-control" placeholder="作者" ng-model="author" type="text" required >
+        </div>
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input id="price" class="form-control" placeholder="价格" ng-model="price" type="number" required >
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="addBook()">添加</button>
+    </form>
+</div>
+
+

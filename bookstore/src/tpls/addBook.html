@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <form>
+        <div class="form-group">
+            <label for="id">图书编号</label>
+            <input id="id" class="form-control" placeholder="图书编号" ng-model="id" type="number" required aria-required="true">
+        </div>
+        <div class="form-group">
+            <label for="name">书名</label>
+            <input id="name" class="form-control" placeholder="书名" ng-model="bookname" type="text" required >
+        </div>
+        <div class="form-group">
+            <label for="author">作者</label>
+            <input id="author" class="form-control" placeholder="作者" ng-model="author" type="text" required >
+        </div>
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input id="price" class="form-control" placeholder="价格" ng-model="price" type="number" required >
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="addBook()">添加</button>
+    </form>
+</div>
